@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>TRAVEC</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="src/reset.css" />
+    <link rel="stylesheet" type="text/css" href="STYLE[1].css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Work+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Ubuntu&display=swap" rel="stylesheet">
+    
+    <!-- css style sheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/STYLE[1].css">
+    <link rel="stylesheet" href="css/STYLE[1].css">
+    <!-- font awesomw -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <!-- bootstrap scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <!-- navbar -->
+  <header>
+    <nav>
+       <input type="checkbox" id="check">
+       <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+       </label>
+    <img class="logo" src="images/Travec.png" alt="logo">
+    <span>Travec</span>
+    <ul class="navlinks">
+        <li><a id="w2">About</a></li>
+        <li><a id="w1">Weather</a></li>
+        <li><a id="p1">Pollution</a></li>
+        <li><a id="a1">Attractions</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+      <!-- search bar  -->
+<!-- <div class="search-bar">
+ <div class="box">
+  <input type="checkbox" id="check">
+  <div class="search-box">
+      <button type="submit"><i class="fas fa-microphone"></i></button>
+    <input type="text" placeholder="enter here...">
+    <label for="check" class="icon">
+     <button><i class="fas fa-search"></i></button> 
+      </label>
+  </div>
+ </div>
+ </div> -->
+
+  
+  <!-- <div class="straight-bar">
+    <div class="menu">
+      <div class="menu-bar" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <div class="menu1">
+      <ul class="menu-items" id="menuItems">
+        <li><div id="w2">INTRODUCTION<div></li>
+        <li><div id="w1">WEATHER<div></li>
+        <li><div id="p1">POLLUTION</div></li>
+        <li><div id="a1">ATTRACTIONS</div></li>
+        <li><div id="b1"> <a href="https://www.google.com/maps/dir//@15.884657,71.9890323,6z/data=!4m5!4m4!1m1!4e1!1m0!3e0" id="click2" placeholder="distance"></a></div></li>
+        <li><div id="c1"> <a href="https://www.google.com/maps/dir//@16.4423204,81.0986491,8.33z/data=!4m2!4m1!3e0!5m1!1e1?entry=ttu" id="click11" placeholder="traffic"></a></div></li>
+
+      </ul>
+      </div>
+    <img  class="travec" src="images/Travec.png"alt="">
+      <div class="search-bar">
+        <form class="search-form">
+          <input class="search-input" type="text" id="city" placeholder="Search Place ">
+        </form>
+        <img class="s"src="images/google-maps.png" id="button" >
+        <img src="images/Travec.png" id="voiceButton" />
+        <script>
+          // Check if speech recognition is supported by the browser
+          if ('webkitSpeechRecognition' in window) {
+            var recognition = new webkitSpeechRecognition();
+
+            // Set the language for speech recognition
+            recognition.lang = 'en-US';
+
+            // When speech recognition starts, update the button text
+            recognition.onstart = function() {
+              document.getElementById('voiceButton').innerHTML = '<img src="path_to_listening_image.jpg" alt="Listening" />';
+            };
+
+            // When speech recognition ends, restore the button text
+            recognition.onend = function() {
+              document.getElementById('voiceButton').innerHTML = '<img src="path_to_your_image.jpg" alt="Voice Search" />';
+            };
+
+            // When speech is recognized, populate the search input with the recognized text
+            recognition.onresult = function(event) {
+              var transcript = event.results[0][0].transcript;
+              document.getElementById('city').value = transcript;
+              document.getElementById('searchForm').submit(); // Submit the search form
+            };
+
+            // Attach click event listener to the voice button
+            document.getElementById('voiceButton').addEventListener('click', function() {
+              recognition.start();
+            });
+          } else {
+            // Speech recognition is not supported
+            console.log('Speech recognition is not supported by your browser.');
+          }
+        </script>
+      </div>
+      </div> -->
+    <!-- <div class="menu">
+      <div class="menu-bar" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <div class="menu1">
+      <ul class="menu-items" id="menuItems">
+        <li><div id="w2">INTRODUCTION<div></li>
+        <li><div id="w1">WEATHER<div></li>
+        <li><div id="p1">POLLUTION</div></li>
+        <li><div id="a1">ATTRACTIONS</div></li>
+      </ul>
+      </div> -->
+    <!-- <main> -->
+  <!-- <div class="rectangle">
+    <a href="https://www.google.com/maps/dir//@15.884657,71.9890323,6z/data=!4m5!4m4!1m1!4e1!1m0!3e0" id="click2">
+     
+    </a>
+  </div> -->
+    <!-- </main> -->
+  <!-- <div class="rectangle1">
+    <a href="https://www.google.com/maps/dir//@16.4423204,81.0986491,8.33z/data=!4m2!4m1!3e0!5m1!1e1?entry=ttu" id="click11">
+     
+    </a>
+  </div> -->
+  <!-- <div class="cal">
+    <div class="rectangle2">
+      <img src="images/convert.png"class="pngImage">
+    </div>
+    </div>
+  <script>
+    $(document).ready(function() {
+      function openConverterSection() {
+        var converterSection = '<div class="converter">' +
+          '<div class="close">&#x2716;</div>' +
+          '<h1>Currency Converter</h1>' +
+          '<input type="text" id="amount" placeholder="Enter amount">' +
+          '<select id="fromCountry"></select>' +
+          '<select id="toCountry"></select>' +
+          '<button id="convert">Convert</button>' +
+          '<div id="result"></div>' +
+          '</div>';
+
+        $('.pngImage').after(converterSection);
+
+        $('.converter').draggable(); // Make the converter section draggable -->
+
+        <!-- $('.pngImage').off('click'); // Disable further clicks on the PNG image -->
+
+        <!-- // Code for the currency converter -->
+        <!-- var countryCurrencyMap = {
+          "United States": "USD",
+          "Canada": "CAD",
+          "United Kingdom": "GBP",
+          "AFGHANISTAN":"AFN",
+        "ALBANIA":"ALL",
+ "ALGERIA":"DZD",
+ "AMERICAN SAMOA":"USD",
+ "ANDORRA":"EUR",
+ "ANGOLA":"AOA",
+ "ANGUILLA":"XCD",
+ "ANTIGUA AND BARBUDA	":"XCD",
+ "ARGENTINA":"ARS",
+ "ARMENIA":"AMD",
+ "ARUBA":"AWG",
+ "AUSTRALIA":"AUD",
+ "AUSTRIA":"EUR",
+ "AZERBAIJAN":"AZN",
+ "BAHAMAS":"BSD",
+ "BAHRAIN":"BHD",
+ "BANGLADESH":"BDT",
+ "BARBADOS":	"BBD", -->
+ <!-- "BELARUS":"BYN",
+ "BELGIUM":"EUR",
+ "BELIZE":"BZD",
+ "BENIN":"XOF",
+ "BERMUDA":"BMD",
+ "BHUTAN":"BTN",
+ "BHUTAN":"INR",
+ "BOLIVIA (PLURINATIONAL STATE OF)":"BOB",
+ "BOLIVIA (PLURINATIONAL STATE OF)":"BOV",
+ "BONAIRE, SINT EUSTATIUS AND SABA":"USD",
+ "BOSNIA AND HERZEGOVINA":"BAM",
+ "BOTSWANA":"BWP",
+ "BOUVET ISLAND":"NOK",
+ "BRAZIL":"BRL",
+ "BRITISH INDIAN OCEAN TERRITORY (THE)":"USD",
+ "BRUNEI DARUSSALAM":"BND",
+ "BULGARIA":"BGN",
+ "BURKINA FASO":"XOF",
+ "BURUNDI":"BIF",
+ "CABO VERDE":"CVE",
+ "CAMBODIA":"KHR",
+ "CAMEROON":"XAF",
+ "CANADA":	"CAD",
+ "CAYMAN ISLANDS (THE)":"KYD",
+ "CENTRAL AFRICAN REPUBLIC (THE)":"XAF",
+ "CHAD":"XAF",
+ "CHILE":"CLF",
+ "CHILE":"CLP",
+ "CHINA":"CNY",
+ "CHRISTMAS ISLAND":"AUD",
+ "COCOS (KEELING) ISLANDS (THE)":"AUD",
+ "COLOMBIA":"COP",
+ "COLOMBIA":"COU",
+ "COMOROS (THE)":"KMF",
+ "CONGO (THE DEMOCRATIC REPUBLIC OF THE)":"CDF",
+ "CONGO (THE)":"XAF",
+ "COOK ISLANDS (THE)":"NZD",
+ "COSTA RICA	Costa":"CRC",
+ "CROATIA":"HRK",
+ "CUBA":"CUC",
+ "CUBA":"CUP",
+ "CURAÇAO":"ANG",
+ "CYPRUS":"EUR",
+ "CZECH REPUBLIC (THE)":"CZK",
+ "DENMARK":"DKK",
+ "DJIBOUTI":"DJF",
+ "DOMINICA":"XCD",
+ "DOMINICAN REPUBLIC (THE)":"DOP",
+ "ECUADOR":"USD",
+ "EGYPT":"EGP",
+ "EL SALVADOR":"SVC",
+ //formated data //
+ "EL SALVADOR":"USD",
+ "EQUATORIAL GUINEA": "XAF",
+ "ERITREA": "ERN",
+ "ESTONIA": "EUR",
+ "ETHIOPIA": "ETB",
+ "EUROPEAN UNION": "EUR",
+ "FALKLAND ISLANDS (THE) [MALVINAS]": "FKP",
+ "FAROE ISLANDS (THE)": "DKK",
+ "FIJI": "FJD",
+ "FINLAND": "EUR",
+ "FRANCE": "EUR",
+ "FRENCH GUIANA": "EUR",
+ "FRENCH POLYNESIA": "XPF",
+ "FRENCH SOUTHERN TERRITORIES (THE)": "EUR",
+ "GABON": "XAF",
+ "GAMBIA (THE)": "GMD",
+ "GEORGIA": "GEL",
+ "GERMANY": "EUR",
+ "GHANA": "GHS",
+ "GIBRALTAR": "GIP",
+ "GREECE": "EUR",
+ "GREENLAND": "DKK",
+ "GRENADA": "XCD",
+ "GUADELOUPE": "EUR",
+ "GUAM": "USD",
+ "GUATEMALA": "GTQ",
+ "GUERNSEY": "GBP",
+ "GUINEA": "GNF",
+ "GUINEA-BISSAU": "XOF",
+ "GUYANA": "GYD",
+ "HAITI": "HTG",
+ "HEARD ISLAND AND McDONALD ISLANDS": "AUD",
+ "HOLY SEE (THE)": "EUR",
+ "HONDURAS": "HNL",
+ "HONG KONG": "HKD",
+ "HUNGARY": "HUF",
+ "ICELAND": "ISK",
+ "INDIA": "INR",
+ "INDONESIA": "IDR",
+ "INTERNATIONAL MONETARY FUND (IMF)": "XDR",
+ "IRAN (ISLAMIC REPUBLIC OF)": "IRR",
+ "IRAQ": "IQD",
+ "IRELAND": "EUR",
+ "ISLE OF MAN":"GBP",
+ "ISRAEL": "ILS",
+ "ITALY": "EUR",
+ "JAMAICA": "JMD",
+ "JAPAN": "JPY",
+ "JERSEY": "GBP",
+ "JORDAN": "JOD",
+ "KAZAKHSTAN": "KZT",
+ "KENYA": "KES",
+ "KIRIBATI": "AUD",
+ "KOREA (THE DEMOCRATIC PEOPLE’S REPUBLIC OF)": "KPW",
+ "KOREA (THE REPUBLIC OF)": "KRW",
+ "KUWAIT": "KWD",
+ "KYRGYZSTAN": "KGS",
+ "LAO PEOPLE’S DEMOCRATIC REPUBLIC (THE)": "LAK",
+ "LATVIA": "EUR",
+ "LEBANON": "LBP",
+ "LESOTHO": "LSL",
+ "LIBERIA": "LRD",
+ "LIBYA": "LYD",
+ "LIECHTENSTEIN": "CHF",
+ "LITHUANIA": "EUR",
+ "LUXEMBOURG": "EUR",
+ "MACAO": "MOP",
+ "MADAGASCAR": "MGA",
+ "MALAWI": "MWK",
+ "MALAYSIA": "MYR",
+ "MALDIVES": "MVR",
+ "MALI": "XOF",
+ "MALTA": "EUR",
+ "MARSHALL ISLANDS (THE)": "USD",
+ "MARTINIQUE": "EUR",
+ "MAURITANIA": "MRU",
+        };
+
+        // Populate the select options with country names
+        for (var country in countryCurrencyMap) {
+          $('#fromCountry').append('<option value="' + country + '">' + country + '</option>');
+          $('#toCountry').append('<option value="' + country + '">' + country + '</option>');
+        }
+
+        $('#convert').click(function() {
+          var amount = $('#amount').val();
+          var fromCountry = $('#fromCountry').val();
+          var toCountry = $('#toCountry').val();
+
+          var fromCurrency = countryCurrencyMap[fromCountry];
+          var toCurrency = countryCurrencyMap[toCountry];
+
+          // Make the API call to retrieve exchange rate
+          $.ajax({
+            url: 'https://api.exchangerate-api.com/v4/latest/USD',
+            dataType: 'json',
+            success: function(data) {
+              var rates = data.rates;
+              var fromRate = rates[fromCurrency];
+              var toRate = rates[toCurrency];
+              var conversionRate = toRate / fromRate;
+              var result = amount * conversionRate;
+              $('#result').html(amount + ' ' + fromCurrency + ' = ' + result.toFixed(2) + ' ' + toCurrency);
+            },
+            error: function() {
+              $('#result').html('An error occurred while fetching the exchange rate.');
+            }
+          });
+        });
+
+        $('.close').click(function() {
+          $(this).parent().remove();
+          $('.pngImage').on('click', function() {
+            openConverterSection();
+          });
+        });
+      }
+
+      $('.pngImage').on('click', function() {
+        openConverterSection();
+      });
+    });
+</script>
+      </div>
+      <script>
+        var menuOpen = false;
+
+        function toggleMenu() {
+          var menuItems = document.getElementById('menuItems');
+          if (!menuOpen) {
+            menuItems.style.display = 'block';
+            menuOpen = true;
+          } else {
+            menuItems.style.display = 'none';
+            menuOpen = false;
+          }
+        }
+      </script>
+  <div class="container0">
+    <div class="container3">
+
+       <div class="aligned">
+        <img  class="travec1" src="images/travel.png"alt="">
+
+        <span>Travec</span>
+      </div>
+      <section class="coloured-section">
+        <div class="row">
+          <div class="col-lg-6">
+            <h1 class="main-desc">Travec, the marvelous web application at your fingertips, is your ultimate travel companion, where every feature you desire is conveniently available on a single website. No longer will you be burdened with the tedious
+              task of searching through multiple websites for different purposes.</h1>
+            <h1 class="main-desc1">"With Travec, everything you need for your travel adventures is harmoniously unified, promising a seamless and delightful experience like never before."</h1>
+          </div>
+          <div class="col-lg-6">
+            <img class="main-img" src="https://img.veenaworld.com/wp-content/uploads/2022/09/damaris-isenschmid-k1LIMMsm8bg-unsplash-800x530.webp" alt="">
+          </div>
+        </div>
+      </section>
+
+      <section class="white-section" id="features">
+        <div class="container-fluid">
+
+          <div class="row">
+
+            <div class="feature-box col-lg-4">
+              <img class="pollimg" src="images/air-pollution.png" alt="">
+              <h3 class="feature-title">Pollution.</h3>
+              <p class="para-title">Use Travec to unlock the hidden secrets of a place's pollution with effortless comprehension. </p>
+            </div>
+
+            <div class="feature-box col-lg-4">
+              <img class="conimg" src="images/convert.png" alt="">
+              <h3 class="feature-title">Currency converter</h3>
+              <p class="para-title">With a mere touch, Travec grants you the power to effortlessly explore.</p>
+            </div>
+
+            <div class="feature-box col-lg-4">
+              <img class="weatherimg" src="images/weather-app.png" alt="">
+              <h3 class="feature-title">Weather report</h3>
+              <p class="para-title">Travec transport you to a world where weather becomes a tactile experience. </p>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <section class="coloured-section" id="testimonials">
+        <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active container-fluid">
+              <h2 class="testimonial-text">Travec unveils a treasure trove of the world's top attractions at your fingertips. Let your wanderlust soar as you effortlessly navigate through a realm of unparalleled beauty and cultural wonders. </h2>
+              <img class="testimonial-image" src="https://play-lh.googleusercontent.com/Kf8WTct65hFJxBUDm5E-EpYsiDoLQiGGbnuyP6HBNax43YShXti9THPon1YKB6zPYpA=w240-h480-rw" alt="location-img">
+            </div>
+            <div class="carousel-item container-fluid">
+              <h2 class="testimonial-text">Prepare to be captivated by the seamless elegance with which Travec reveals the crown jewels of each place, allowing you to curate unforgettable adventures with ease and sophistication.</h2>
+              <img class="testimonial-image" src="https://play-lh.googleusercontent.com/Kf8WTct65hFJxBUDm5E-EpYsiDoLQiGGbnuyP6HBNax43YShXti9THPon1YKB6zPYpA=w240-h480-rw" alt="lady-profile">
+            </div>
+
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+          </button>
+        </div>
+
+      </section>
+      <section>
+        <div class="div5">
+          <i class="social-icons fab fa-facebook-f"></i>
+          <i class="social-icons fab fa-twitter"></i>
+          <i class="social-icons fab fa-instagram"></i>
+          <i class="social-icons fas fa-envelope"></i>
+          <p>@copyright by Travec(2023)</p>
+        </div>
+      </section>
+   </div>
+    <div class="container"> -->
+      <!--- <div id="destination">
+
+        </div>-->
+        <!-- <div class="sectiontitle">
+            <h2>CURRENT WEATHER</h2>
+        </div>
+        <section id="weather9">
+
+            <div class="weather" id="weather1">
+
+            </div>
+
+       </section>
+        <div class="sectiontitle">
+          <h2>5 DAY FORECAST</h2>
+      </div>
+      <section id="weather">
+        <div class="weather" id="weather2">
+        </div>
+        <div class="weather" id="weather3">
+        </div>
+        <div class="weather" id="weather4">
+        </div>
+
+    </section>
+
+    <section id="weather0">
+
+      <div class="weather" id="weather5">
+      </div>
+      <section id="weatherk">
+      <div class="weather" id="weather6">
+      </div>
+      </section>
+  </section>
+<div class="container2">
+  <h1>Weather and Pollution Data</h1>
+  <form onsubmit="event.preventDefault(); handleSubmit();">
+    <label for="cityInput">City:</label>
+    <input type="text" id="cityInput">
+    <button type="submit">Fetch Data</button>
+    <div id="result"></div>
+    </form>
+</div>
+  <div class="container1">
+        <div class="sectiontitle">
+            <h2>TOP ATTRACTIONS</h2>
+        </div>
+
+        <section id="venues">
+            <div class="venue" id="venue1">
+            </div>
+            <a href="https://www.google.com/maps/dir/12.8205281,80.043913//@15.884657,71.9890323,6z/data=!4m5!4m4!1m1!4e1!1m0!3e0" id="click3"> <img id="s1"src="images/google-maps1.png" ></a>
+            <div class="venue" id="venue2">
+            </div>
+            <a href="https://www.google.com/maps/dir/12.8205281,80.043913//@15.884657,71.9890323,6z/data=!4m5!4m4!1m1!4e1!1m0!3e0" id="click4"> <img id="s1"src="images/google-maps1.png" ></a>
+            <div class="venue" id="venue3">
+              </div>
+              <a href="https://www.google.com/maps/dir/12.8205281,80.043913//@15.884657,71.9890323,6z/data=!4m5!4m4!1m1!4e1!1m0!3e0" id="click5"> <img id="s1"src="images/google-maps1.png" ></a>
+        </section>
+        <section id="venuesk">
+          <div class="venue" id="venue4">
+          </div>
+          <a href="https://www.google.com/maps/dir/12.8205281,80.043913//@15.884657,71.9890323,6z/data=!4m5!4m4!1m1!4e1!1m0!3e0" id="click6"> <img id="s1"src="images/google-maps1.png" ></a>
+          <section id="venues0">
+          <div class="venue" id="venue5">
+            </div>
+            <a href="https://www.google.com/maps/dir/12.8205281,80.043913//@15.884657,71.9890323,6z/data=!4m5!4m4!1m1!4e1!1m0!3e0" id="click7"> <img id="s1"src="images/google-maps1.png" ></a>
+          </section>
+      </section>
+      <section id="venues">
+        <div class="venue" id="venue6">
+
+        </div>
+        <a href="https://www.google.com/maps/dir/12.8205281,80.043913//@15.884657,71.9890323,6z/data=!4m5!4m4!1m1!4e1!1m0!3e0" id="click8"> <img id="s1"src="images/google-maps1.png" ></a>
+        <div class="venue" id="venue7">
+
+        </div>
+        <a href="https://www.google.com/maps/dir/12.8205281,80.043913//@15.884657,71.9890323,6z/data=!4m5!4m4!1m1!4e1!1m0!3e0" id="click9"> <img id="s1"src="images/google-maps1.png" ></a>
+        <div class="venue" id="venue8">
+        </div>
+        <a href="https://www.google.com/maps/dir/12.8205281,80.043913//@15.884657,71.9890323,6z/data=!4m5!4m4!1m1!4e1!1m0!3e0" id="click10"> <img id="s1"src="images/google-maps1.png" ></a>
+    </section>
+    </div> -->
+        <!-- Footer -->
+        <!-- <footer>
+        </footer>
+
+    </div> -->
+
+    <!-- JS and jQuery source links -->
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="src/JS/helper.js"></script>
+    <script src="tt.js"></script>
+    <script src="t1.js"></script> -->
+</body>
+
+</html>
